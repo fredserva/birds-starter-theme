@@ -218,3 +218,31 @@ add_action( 'wp_enqueue_scripts', 'birds_starter_theme_scripts' );
  */
 	// Cleanup
 require locate_template( '/inc/extras/cleanup.php' );
+
+/**
+ * DNS Prefetching
+ */
+function birds_starter_theme_dns_prefetch() {
+	$prefetch = 'on';
+	echo "\n <!-- DNS Prefetching Start --> \n";
+	echo '<meta http-equiv="x-dns-prefetch-control" content="'.$prefetch.'">'."\n";
+
+	if ( 'on' != $prefetch ) {
+		$dns_domains = array(
+			'//fonts.googleapis.com',
+			'//ajax.googleapis.com',
+			'//www.google-analytics.com',
+			'//0.gravatar.com',
+			'//1.gravatar.com',
+			'//2.gravatar.com',
+		);
+		foreach ( $dns_domains as $domain ) {
+			if ( ! empty( $domain ) ) {
+				echo '<link rel="dns-prefetch" href="'.$domain.'" />'."\n";
+			}
+		}
+		unset( $domain );
+	}
+	echo "<!-- DNS Prefetching end --> \n";
+}
+add_action( 'wp_head', 'birds_starter_theme_dns_prefetch', 0 );
