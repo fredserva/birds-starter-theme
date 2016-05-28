@@ -15,6 +15,11 @@ Find/Replace
 - birds_starter_theme
 - Birds_Starter_Theme (CamelCase strings)
 
+Notes
+===================
+You can find Carbon Fields (<a href="http://carbonfields.net/" target="_blank">http://carbonfields.net/</a>) and TGM Plugin Activation (<a href="http://tgmpluginactivation.com/" target="_blank">http://tgmpluginactivation.com/</a>) in the Vendor folder.
+They've been placed here for make use of them later (or not)...
+
 Changelog
 ===================
 See <a href="changelog.md">Changelog</a>

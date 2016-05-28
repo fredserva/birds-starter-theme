@@ -193,7 +193,7 @@ class Birds_Starter_Theme_menu_walker extends Walker_Nav_Menu {
 			}
 
 			$fb_output .= '>';
-			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
+			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">'.__('Add a menu', 'birds').'</a></li>';
 			$fb_output .= '</ul>';
 
 			if ( $container ) {
