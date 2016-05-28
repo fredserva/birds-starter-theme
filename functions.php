@@ -212,3 +212,9 @@ function birds_starter_theme_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'birds_starter_theme_scripts' );
+
+/**
+ * Includes
+ */
+	// Cleanup
+require locate_template( '/inc/extras/cleanup.php' );

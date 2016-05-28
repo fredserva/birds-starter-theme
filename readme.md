@@ -17,5 +17,4 @@ Find/Replace
 
 Changelog
 ===================
-Version 1.0 (2016/05/02)
-- Initial release
+See <a href="changelog.md">Changelog</a>
