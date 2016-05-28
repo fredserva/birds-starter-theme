@@ -37,3 +37,6 @@ inc/composer.lock
 inc/composer.phar
 inc/vendor/autoload.php
 inc/vendor/composer/
+
+# Some others
+blocks/
