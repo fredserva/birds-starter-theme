@@ -18,6 +18,7 @@
 
 	<meta name="author" content="<?php the_author_meta( 'display_name', 1 ); ?>">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -38,5 +39,12 @@
 </head>
 <body <?php echo body_class(); ?>>
 	<header id="header" role="banner">
+		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- #site-navigation -->
 	</header>
 	<section id="content" role="main">

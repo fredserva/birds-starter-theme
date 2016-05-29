@@ -1,10 +1,17 @@
 # What's New
 Changelog for the Birds Starter Theme.
 
+### 1.0.3
+<hr />
+#### Added:
+- Basic Site Branding and Navigation (**in** *header.php*)
+- Custom functions that act independently of the theme templates (*inc/extras/extras.php*)
+- Function to generate Facebook OG Tags And Twitter Cards (**in** *inc/extras/extras.php*)
+
 ### 1.0.2
 <hr />
 #### Changed:
-- DNS Prefetching in a function
+- DNS Prefetching in a function (**in** *inc/extras/extras.php*)
 
 ### 1.0.1
 <hr />

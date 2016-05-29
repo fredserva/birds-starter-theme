@@ -1,6 +1,6 @@
 <?php
 /**
- * Some Clean Ups
+ * Some Cleanups
  *
  * @package  Birds_Starter_Theme
  * @since    1.0.1
