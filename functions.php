@@ -132,40 +132,40 @@ function birds_starter_theme_widgets_init() {
 add_action( 'widgets_init', 'birds_starter_theme_widgets_init' );
 
 if ( ! function_exists( 'birds_starter_theme_fonts_url' ) ) :
-/**
+	/**
 	 * Register Google fonts for the theme.
 	 * Create your own birds_starter_theme_fonts_url() function to override in a child theme.
 	 *
 	 * @since 1.0.0
 	 */
-function birds_starter_theme_fonts_url() {
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,latin-ext';
+	function birds_starter_theme_fonts_url() {
+		$fonts_url = '';
+		$fonts     = array();
+		$subsets   = 'latin,latin-ext';
 
-	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-	$lato = _x( 'on', 'Lato font: on or off', 'purplesandpiper' );
-	$merriweather = _x( 'on', 'Merriweather font: on or off', 'purplesandpiper' );
-	$open_sans = _x( 'on', 'Open Sans font: on or off', 'purplesandpiper' );
+		/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+		$lato = _x( 'on', 'Lato font: on or off', 'purplesandpiper' );
+		$merriweather = _x( 'on', 'Merriweather font: on or off', 'purplesandpiper' );
+		$open_sans = _x( 'on', 'Open Sans font: on or off', 'purplesandpiper' );
 
-	if ( 'off' !== $lato ) {
-		$font_families[] = 'Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic';
-	}
-	if ( 'off' !== $merriweather ) {
-		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
-	}
-	if ( 'off' !== $open_sans ) {
-		$fonts[] = 'Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic';
-	}
+		if ( 'off' !== $lato ) {
+			$font_families[] = 'Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic';
+		}
+		if ( 'off' !== $merriweather ) {
+			$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
+		}
+		if ( 'off' !== $open_sans ) {
+			$fonts[] = 'Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic';
+		}
 
-	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' => urlencode( implode( '|', $fonts ) ),
-			'subset' => urlencode( $subsets ),
-		), 'https://fonts.googleapis.com/css' );
+		if ( $fonts ) {
+			$fonts_url = add_query_arg( array(
+				'family' => urlencode( implode( '|', $fonts ) ),
+				'subset' => urlencode( $subsets ),
+			), 'https://fonts.googleapis.com/css' );
+		}
+		return $fonts_url;
 	}
-	return $fonts_url;
-}
 endif;
 
 /**
