@@ -200,6 +200,9 @@ function birds_starter_theme_scripts() {
 	// Bulma CSS - CSS framework based on Flexbox http://bulma.io
 	wp_enqueue_style( 'birds_starter_theme-bulma-css', get_template_directory_uri() . '/inc/vendor/bulma/bulma.css', array(), null );
 
+	// Google Fonts
+	wp_enqueue_style( 'birds_starter_theme-google-fonts', purple_sandpiper_fonts_url(), array(), null );
+
 	/**
 	 * JS scripts.
 	 */
