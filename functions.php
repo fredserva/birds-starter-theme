@@ -144,9 +144,9 @@ if ( ! function_exists( 'birds_starter_theme_fonts_url' ) ) :
 		$subsets   = 'latin,latin-ext';
 
 		/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-		$lato = _x( 'on', 'Lato font: on or off', 'purplesandpiper' );
-		$merriweather = _x( 'on', 'Merriweather font: on or off', 'purplesandpiper' );
-		$open_sans = _x( 'on', 'Open Sans font: on or off', 'purplesandpiper' );
+		$lato = _x( 'on', 'Lato font: on or off', 'birds' );
+		$merriweather = _x( 'on', 'Merriweather font: on or off', 'birds' );
+		$open_sans = _x( 'on', 'Open Sans font: on or off', 'birds' );
 
 		if ( 'off' !== $lato ) {
 			$font_families[] = 'Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic';
@@ -201,7 +201,7 @@ function birds_starter_theme_scripts() {
 	wp_enqueue_style( 'birds_starter_theme-bulma-css', get_template_directory_uri() . '/inc/vendor/bulma/bulma.css', array(), null );
 
 	// Google Fonts
-	wp_enqueue_style( 'birds_starter_theme-google-fonts', purple_sandpiper_fonts_url(), array(), null );
+	wp_enqueue_style( 'birds_starter_theme-google-fonts', birds_starter_theme_fonts_url(), array(), null );
 
 	/**
 	 * JS scripts.
@@ -230,3 +230,14 @@ add_action( 'wp_enqueue_scripts', 'birds_starter_theme_scripts' );
  */
 require locate_template( '/inc/extras/cleanup.php' );						// Cleanup
 require locate_template( '/inc/extras/extras.php' );						// Extras
+
+/**
+ * Minimum Requirements
+ */
+require locate_template( '/inc/extras/minimum-requirements.php' );
+$requirements = new Minimum_Requirements( '5.3.4', '4.5', 'Birds Starter Theme', array() );
+register_activation_hook( __FILE__, array( $requirements, 'check_compatibility_on_install' ) );
+if ( ! $requirements->is_compatible_version() ) {
+	add_action( 'admin_notices', array( $requirements, 'load_admin_notices' ) );
+	return;
+}

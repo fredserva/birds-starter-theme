@@ -1,6 +1,19 @@
 # What's New
 Changelog for the Birds Starter Theme.
 
+### 1.0.4
+<hr />
+#### Updated:
+- normalize.css v4.2.0
+
+#### Added:
+- Minimum Requirements Class
+<pre>Usage: $requirements = new Minimum_Requirements( '5.3.4', '4.5', 'YOUR THEME NAME', array( 'plugin-a', 'plugin-b' ) );</pre>where <code>5.3.4</code> is the minimum PHP version required, <code>4.5</code> is the minimum WordPress version required. Plugin slugs in the array are slugs of required plugins. If you use TGM Plugin Activation or don't need extra plugins, just use <code>array()</code>
+- Call to Minimum Requirements Class (**in** *functions.php*)
+
+#### Changed:
+- Some typo in the code
+
 ### 1.0.3
 <hr />
 #### Added:
