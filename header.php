@@ -38,6 +38,11 @@
 ?>
 </head>
 <body <?php echo body_class(); ?>>
+	<!--[if lt IE 10]>
+		<div class="browsehappy">
+			You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.
+		</div>
+	<![endif]-->
 	<header id="header" role="banner">
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

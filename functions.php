@@ -197,11 +197,14 @@ function birds_starter_theme_scripts() {
 	// Normalize
 	wp_enqueue_style( 'birds_starter_theme-normalize-css', get_template_directory_uri() . '/css/normalize.css', array(), null );
 
-	// Bulma CSS - CSS framework based on Flexbox http://bulma.io
-	wp_enqueue_style( 'birds_starter_theme-bulma-css', get_template_directory_uri() . '/inc/vendor/bulma/bulma.css', array(), null );
+	// Spectre CSS - CSS framework https://picturepan2.github.io/spectre/
+	wp_enqueue_style( 'birds_starter_theme-spectre-css', get_template_directory_uri() . '/inc/vendor/spectre/spectre.css', array(), null );
 
 	// Google Fonts
 	wp_enqueue_style( 'birds_starter_theme-google-fonts', birds_starter_theme_fonts_url(), array(), null );
+
+	// Main Stylesheet
+	wp_enqueue_style( 'birds_starter_theme-main-css', get_template_directory_uri() . '/css/main.css', array(), null );
 
 	/**
 	 * JS scripts.

@@ -1,6 +1,18 @@
 # What's New
 Changelog for the Birds Starter Theme.
 
+### 1.0.5
+<hr />
+#### Updated:
+- normalize.css v5.0.0
+
+#### Added:
+- Browse Happy banner placed before the main content area that shows a 100% width alert-style dialog to users of old versions of IE
+- A main.css file to add custom CSS (*css/main.css*)
+
+#### Changed:
+- Switch from Bulma to Spectre
+
 ### 1.0.4
 <hr />
 #### Updated:

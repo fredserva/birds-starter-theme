@@ -1,0 +1,28 @@
+/**
+ * Browse Happy
+ *
+ * CSS used for the banner placed before your main content area that shows
+ * a 100% width alert-style dialog to users of old versions of IE
+ *
+ * Don't remove !
+ *
+ */
+.browsehappy {
+	font-family: 'Lucida Console', Monaco, monospace;
+	font-size: 18px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 70px;
+	color: #fff;
+	background-color: #922903;
+}
+.browsehappy a {
+	padding: 0 10px;
+	text-decoration: none;
+	color: #000;
+}

@@ -2,8 +2,8 @@
 This is a work in progress.  
 Lots of things have to be done, so be careful :)
 
-This Starter Theme is meant to make use of <a href="http://bulma.io/" target="_blank">Bulma</a>, a modern CSS framework based on Flexbox, but none of its classes have been implemented.  
-Take a look at the <a href="http://bulma.io/documentation/overview/start/" target="_blank">documentation</a>.
+This Starter Theme is meant to make use of <a href="https://picturepan2.github.io/spectre/" target="_blank">Spectre</a>, a lightweight, responsive and modern CSS framework for faster and extensible development.  
+Take a look at the <a href="https://picturepan2.github.io/spectre/#getting-started" target="_blank">documentation</a>.
 
 # Find/Replace
 1 File Headers
