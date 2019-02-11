@@ -1,8 +1,28 @@
 # What's New
 Changelog for the Birds Starter Theme.
 
+### 1.0.7
+<hr />
+
+#### Updated:
+- normalize.css v8.0.1
+
+#### Changed:
+- WP Title Method
+- Switch from Grillade to Gridflex
+
+#### Added:
+- Enable support for a few items to enhance this new Gutenberg editor
+
+### 1.0.6
+<hr />
+
+#### Changed:
+- Switch from Spectre to Grillade
+
 ### 1.0.5
 <hr />
+
 #### Updated:
 - normalize.css v5.0.0
 
@@ -15,6 +35,7 @@ Changelog for the Birds Starter Theme.
 
 ### 1.0.4
 <hr />
+
 #### Updated:
 - normalize.css v4.2.0
 
@@ -28,6 +49,7 @@ Changelog for the Birds Starter Theme.
 
 ### 1.0.3
 <hr />
+
 #### Added:
 - Basic Site Branding and Navigation (**in** *header.php*)
 - Custom functions that act independently of the theme templates (*inc/extras/extras.php*)
@@ -35,11 +57,13 @@ Changelog for the Birds Starter Theme.
 
 ### 1.0.2
 <hr />
+
 #### Changed:
 - DNS Prefetching in a function (**in** *inc/extras/extras.php*)
 
 ### 1.0.1
 <hr />
+
 #### Added:
 - Some Cleanups (*inc/extras/cleanup.php*)
 - Google Fonts Prefetch

@@ -14,7 +14,7 @@
 <!--[if IE 9 ]> <html class="no-js ie ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 
-	<title><?php wp_title(); ?></title>
+	<title><?php wp_title( '|', true, 'left' ); ?></title>
 
 	<meta name="author" content="<?php the_author_meta( 'display_name', 1 ); ?>">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">

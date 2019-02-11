@@ -12,23 +12,15 @@ if ( ! function_exists( 'birds_starter_theme_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 */
-		load_theme_textdomain( 'birds', get_template_directory().'/languages' );
+		load_theme_textdomain( 'birds', get_template_directory() . '/languages' );
 		$locale = get_locale();
-		$locale_file = get_template_directory()."/languages/$locale.php";
+		$locale_file = get_template_directory() . "/languages/$locale.php";
 		if ( is_readable( $locale_file ) ) {
 			require_once( $locale_file );
 		}
 
 		add_theme_support( 'menus' );
 		require_once( 'inc/menu-walker.php' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
 
 		//add_theme_support( 'custom-background', $args );
 		//add_theme_support( 'custom-header', $args );
@@ -94,6 +86,25 @@ if ( ! function_exists( 'birds_starter_theme_setup' ) ) :
 		 * Indicate widget sidebars can use selective refresh in the Customizer.
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		/*
+		 * Enable support for a few items to enhance this new Gutenberg editor.
+		 */
+
+		// Allows the theme to add to the default set of core block styles
+		add_theme_support( 'wp-block-styles' );
+
+		// Allows embedded media to retain its aspect ratio
+		add_theme_support( 'responsive-embeds' );
+
+		// Offers the ability to add class names to the image wrapper for those elements that offer wide or full-width images
+		add_theme_support( 'align-wide' );
+
+		// Sets the editor font sizes which correspond to editor styles and are available within the block settings where applicable. The defaults are the same as what’s defined in the theme here, but any font sizes or uses could be added in your custom array
+		add_theme_support( 'editor-font-sizes', array() );
+
+		// Does the same thing, setting your theme’s main color palette
+		add_theme_support( 'editor-color-palette', array() );
 
 	}
 endif; // birds_starter_theme_setup
@@ -197,8 +208,8 @@ function birds_starter_theme_scripts() {
 	// Normalize
 	wp_enqueue_style( 'birds_starter_theme-normalize-css', get_template_directory_uri() . '/css/normalize.css', array(), null );
 
-	// Spectre CSS - CSS framework https://picturepan2.github.io/spectre/
-	wp_enqueue_style( 'birds_starter_theme-spectre-css', get_template_directory_uri() . '/inc/vendor/spectre/spectre.css', array(), null );
+	// Gridlex CSS - https://gridlex.devlint.fr/
+	wp_enqueue_style( 'birds_starter_theme-gridlex-css', get_template_directory_uri() . '/inc/vendor/gridlex/gridlex.css', array(), null );
 
 	// Google Fonts
 	wp_enqueue_style( 'birds_starter_theme-google-fonts', birds_starter_theme_fonts_url(), array(), null );
@@ -231,8 +242,8 @@ add_action( 'wp_enqueue_scripts', 'birds_starter_theme_scripts' );
 /**
  * Includes
  */
-require locate_template( '/inc/extras/cleanup.php' );						// Cleanup
-require locate_template( '/inc/extras/extras.php' );						// Extras
+require locate_template( '/inc/extras/cleanup.php' ); // Cleanup
+require locate_template( '/inc/extras/extras.php' );  // Extras
 
 /**
  * Minimum Requirements
@@ -244,3 +255,19 @@ if ( ! $requirements->is_compatible_version() ) {
 	add_action( 'admin_notices', array( $requirements, 'load_admin_notices' ) );
 	return;
 }
+
+/**
+ * Creates a nicely formatted and more specific title element text
+ * for output in head of document, based on current view.
+ */
+function birds_starter_theme_wp_title( $title, $sep ) {
+	global $page;
+
+	if ( is_feed() ) {
+		return $title;
+	}
+	// Add the site name & description.
+	$title = html_entity_decode( get_bloginfo( 'name' ) ) . html_entity_decode( $title );
+	return $title;
+}
+add_filter( 'wp_title', 'birds_starter_theme_wp_title', 10, 2 );
