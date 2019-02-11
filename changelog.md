@@ -6,6 +6,7 @@ Changelog for the Birds Starter Theme.
 
 #### Updated:
 - normalize.css v8.0.1
+- Carbon Fields Version 3 - now with Gutenberg Blocks Support
 
 #### Changed:
 - WP Title Method

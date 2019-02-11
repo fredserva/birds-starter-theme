@@ -2,8 +2,8 @@
 This is a work in progress.  
 Lots of things have to be done, so be careful :)
 
-This Starter Theme is meant to make use of <a href="https://picturepan2.github.io/spectre/" target="_blank">Spectre</a>, a lightweight, responsive and modern CSS framework for faster and extensible development.  
-Take a look at the <a href="https://picturepan2.github.io/spectre/#getting-started" target="_blank">documentation</a>.
+This Starter Theme is meant to make use of <a href="https://gridlex.devlint.fr/" target="_blank">Gridlex</a>, a grid system based on Flexbox.  
+Take a look at the <a href="https://gridlex.devlint.fr/#documentation" target="_blank">documentation</a>.
 
 # Find/Replace
 1 File Headers
@@ -23,8 +23,10 @@ Take a look at the <a href="https://picturepan2.github.io/spectre/#getting-start
 - Birds Starter Theme
 
 # Notes
-You can find Carbon Fields (<a href="http://carbonfields.net/" target="_blank">http://carbonfields.net/</a>) and TGM Plugin Activation (<a href="http://tgmpluginactivation.com/" target="_blank">http://tgmpluginactivation.com/</a>) in the Vendor folder.
+You can find Carbon Fields (<a href="https://carbonfields.net/" target="_blank">https://carbonfields.net/</a>) and TGM Plugin Activation (<a href="http://tgmpluginactivation.com/" target="_blank">http://tgmpluginactivation.com/</a>) in the Vendor folder.
 They've been placed here for make later use of them (or not)...
+
+Carbon Fields documentation: <a href="https://docs.carbonfields.net/#/quickstart" target="_blank">https://docs.carbonfields.net/#/quickstart</a>
 
 # Changelog
 See <a href="changelog.md">Changelog</a>

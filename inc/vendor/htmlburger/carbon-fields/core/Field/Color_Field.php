@@ -7,25 +7,74 @@ namespace Carbon_Fields\Field;
  */
 class Color_Field extends Field {
 	/**
-	 * Underscore template of the field.
+	 * Flag whether to enable alpha selection
+	 *
+	 * @var boolean
 	 */
-	public function template() {
-		?>
-		<div class="carbon-color-row">
-			<div class="input-with-button">
-				<input id="{{{ id }}}" type="text" name="{{{ name }}}" value="{{ value }}" class="regular-text carbon-color" />
-				<span class="pickcolor button icon-button hide-if-no-js"><?php _e( 'Select a Color', 'carbon_fields' ); ?></span>
-			</div>
-			<div class="carbon-color-container hide-if-no-js"></div>
-		</div>
-		<?php
+	protected $alpha_enabled = false;
+
+	/**
+	 * Array of hex colors to show in the color picker
+	 *
+	 * @var array<string>
+	 */
+	protected $palette = array();
+
+	/**
+	 * Returns an array that holds the field data, suitable for JSON representation.
+	 *
+	 * @param bool $load  Should the value be loaded from the database or use the value from the current instance.
+	 * @return array
+	 */
+	public function to_json( $load ) {
+		$field_data = parent::to_json( $load );
+
+		$field_data = array_merge( $field_data, array(
+			'value' => $this->get_value(),
+			'alphaEnabled' => $this->get_alpha_enabled(),
+			'palette' => $this->get_palette(),
+		) );
+
+		return $field_data;
 	}
 
 	/**
-	 * Hook administration scripts and styles.
+	 * Get color presets
+	 *
+	 * @return array<string>
 	 */
-	public function admin_enqueue_scripts() {
-		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'iris' );
+	public function get_palette() {
+		return $this->palette;
+	}
+
+	/**
+	 * Set color presets
+	 *
+	 * @param  array<string> $palette
+	 * @return self          $this
+	 */
+	public function set_palette( $palette ) {
+		$this->palette = $palette;
+		return $this;
+	}
+
+	/**
+	 * Get whether alpha is enabled
+	 *
+	 * @return boolean
+	 */
+	public function get_alpha_enabled() {
+		return $this->alpha_enabled;
+	}
+
+	/**
+	 * Set whether alpha is enabled
+	 *
+	 * @param  boolean $enabled
+	 * @return self    $this
+	 */
+	public function set_alpha_enabled( $enabled = true ) {
+		$this->alpha_enabled = $enabled;
+		return $this;
 	}
 }

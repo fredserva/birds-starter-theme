@@ -7,17 +7,16 @@ namespace Carbon_Fields\Field;
  * Intended only for use in theme options container.
  */
 class Footer_Scripts_Field extends Scripts_Field {
-	/**
-	 * Default help text to be displayed for this type of field.
-	 */
-	public function get_default_help_text() {
-		return __( 'If you need to add scripts to your footer (like Google Analytics tracking code), you should enter them in this box.', 'carbon_fields' );
-	}
 
 	/**
-	 * Action name to be hooked on.
+	 * {@inheritDoc}
 	 */
-	public function get_hook_name() {
-		return 'wp_footer';
+	protected $hook_name = 'wp_footer';
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected function get_default_help_text() {
+		return __( 'If you need to add scripts to your footer (like Google Analytics tracking code), you should enter them in this box.', 'carbon-fields' );
 	}
 }

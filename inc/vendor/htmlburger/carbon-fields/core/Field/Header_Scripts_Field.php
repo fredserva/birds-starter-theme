@@ -7,17 +7,16 @@ namespace Carbon_Fields\Field;
  * Intended only for use in theme options container.
  */
 class Header_Scripts_Field extends Scripts_Field {
-	/**
-	 * Default help text to be displayed for this type of field.
-	 */
-	public function get_default_help_text() {
-		return __( 'If you need to add scripts to your header, you should enter them here.', 'carbon_fields' );
-	}
 
 	/**
-	 * Action name to be hooked on.
+	 * {@inheritDoc}
 	 */
-	public function get_hook_name() {
-		return 'wp_head';
+	protected $hook_name = 'wp_head';
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected function get_default_help_text() {
+		return __( 'If you need to add scripts to your header, you should enter them here.', 'carbon-fields' );
 	}
 }
