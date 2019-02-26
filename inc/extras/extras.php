@@ -14,7 +14,7 @@ add_action( 'wp_head', 'birds_starter_theme_dns_prefetch', 0 );
 function birds_starter_theme_dns_prefetch() {
 	$prefetch = 'on';
 	echo "\n <!-- DNS Prefetching Start --> \n";
-	echo '<meta http-equiv="x-dns-prefetch-control" content="'.$prefetch.'">'."\n";
+	echo '<meta http-equiv="x-dns-prefetch-control" content="' . $prefetch . '">' . "\n";
 
 	if ( 'on' === $prefetch ) {
 		$dns_domains = array(
@@ -27,7 +27,7 @@ function birds_starter_theme_dns_prefetch() {
 		);
 		foreach ( $dns_domains as $domain ) {
 			if ( ! empty( $domain ) ) {
-				echo '<link rel="dns-prefetch" href="'.$domain.'" />'."\n";
+				echo '<link rel="dns-prefetch" href="' . $domain . '" />' . "\n";
 			}
 		}
 		unset( $domain );
@@ -62,7 +62,7 @@ function birds_starter_theme_og_metatags() {
 			$og_des = strip_shortcodes( $og_des );
 			$og_des = str_replace( array( "\n", "\r", "\t" ), ' ', $og_des );
 			$og_des = substr( $og_des, 0, 155 );
-			$og_des = $og_des.'...';
+			$og_des = $og_des . '...';
 		}
 		?>
 		<meta property="og:url" content="<?php if ( is_home() || is_front_page() ) { echo home_url(); } else { the_permalink(); } ?>"/>

@@ -20,7 +20,7 @@ if ( ! function_exists( 'birds_starter_theme_setup' ) ) :
 		}
 
 		add_theme_support( 'menus' );
-		require_once( 'inc/menu-walker.php' );
+		require_once( 'inc/class-birds-starter-theme-menu-walker.php' );
 
 		//add_theme_support( 'custom-background', $args );
 		//add_theme_support( 'custom-header', $args );
@@ -37,44 +37,55 @@ if ( ! function_exists( 'birds_starter_theme_setup' ) ) :
 		/*
 		 * Enable support for custom logo.
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 240,
-			'width'       => 240,
-			'flex-height' => true,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 240,
+				'width'       => 240,
+				'flex-height' => true,
+			)
+		);
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'birds' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Menu', 'birds' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		/*
 		 * Enable support for Post Formats.
 		 * @link : https://codex.wordpress.org/Post_Formats
 		 */
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-			'gallery',
-			'status',
-			'audio',
-			'chat',
-		) );
+		add_theme_support(
+			'post-formats',
+			array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+				'gallery',
+				'status',
+				'audio',
+				'chat',
+			)
+		);
 
 		/*
 		 * This theme styles the visual editor to resemble the theme style,
@@ -130,15 +141,17 @@ add_action( 'after_setup_theme', 'birds_starter_theme_content_width', 0 );
  * @since 1.0.0
  */
 function birds_starter_theme_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Main Sidebar', 'birds' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'birds' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => __( 'Main Sidebar', 'birds' ),
+			'id'            => 'sidebar-1',
+			'description'   => __( 'Add widgets here to appear in your sidebar.', 'birds' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'birds_starter_theme_widgets_init' );
 
@@ -170,10 +183,13 @@ if ( ! function_exists( 'birds_starter_theme_fonts_url' ) ) :
 		}
 
 		if ( $fonts ) {
-			$fonts_url = add_query_arg( array(
-				'family' => urlencode( implode( '|', $fonts ) ),
-				'subset' => urlencode( $subsets ),
-			), 'https://fonts.googleapis.com/css' );
+			$fonts_url = add_query_arg(
+				array(
+					'family' => urlencode( implode( '|', $fonts ) ),
+					'subset' => urlencode( $subsets ),
+				),
+				'https://fonts.googleapis.com/css'
+			);
 		}
 		return $fonts_url;
 	}
@@ -248,8 +264,8 @@ require locate_template( '/inc/extras/extras.php' );  // Extras
 /**
  * Minimum Requirements
  */
-require locate_template( '/inc/extras/minimum-requirements.php' );
-$requirements = new Minimum_Requirements( '5.3.4', '4.5', 'Birds Starter Theme', array() );
+require locate_template( '/inc/extras/class-minimum-requirements.php' );
+$requirements = new Minimum_Requirements( '7.1.1', '5.0', 'Birds Starter Theme', array() );
 register_activation_hook( __FILE__, array( $requirements, 'check_compatibility_on_install' ) );
 if ( ! $requirements->is_compatible_version() ) {
 	add_action( 'admin_notices', array( $requirements, 'load_admin_notices' ) );

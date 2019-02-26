@@ -9,11 +9,15 @@ Changelog for the Birds Starter Theme.
 - Carbon Fields Version 3 - now with Gutenberg Blocks Support
 
 #### Changed:
-- WP Title Method
+- WordPress Title Method
 - Switch from Grillade to Gridflex
+- Minimum Requirements (PHP 7.1.1 - WordPress 5+)
+- Coding Standards
 
 #### Added:
 - Enable support for a few items to enhance this new Gutenberg editor
+- Kirki
+- readme.txt
 
 ### 1.0.6
 <hr />

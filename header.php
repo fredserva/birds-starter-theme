@@ -35,7 +35,7 @@
 	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
 
 	wp_head();
-?>
+	?>
 </head>
 <body <?php echo body_class(); ?>>
 	<!--[if lt IE 10]>

@@ -21,20 +21,9 @@ Thumbs.db
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 
-# CodeKit
-config.codekit
-
-# Bower
-bower_components/
-.bower-cache
-.bower-registry
-.bower-tmp
-bower.json
-
 # Composer
 inc/composer.json
 inc/composer.lock
-inc/composer.phar
 inc/vendor/autoload.php
 inc/vendor/composer/
 
