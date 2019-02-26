@@ -1,7 +1,7 @@
 === Birds Starter Theme ===
 Contributors: ...
 Tags: threaded-comments, translation-ready
-Requires at least: 4.5
+Requires at least: 5.0
 Tested up to: WordPress 5.1
 Stable tag: 1.0.7
 License: GPLv2 or later
