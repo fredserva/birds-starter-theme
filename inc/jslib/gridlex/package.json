@@ -1,0 +1,35 @@
+{
+  "name": "gridlex",
+  "description": "Just a Flexbox Grid System",
+  "keywords": [
+    "css",
+    "grid",
+    "col",
+    "sass",
+    "scss",
+    "mediaqueries",
+    "flexbox"
+  ],
+  "url": "https://github.com/devlint/gridlex",
+  "homepage": "http://gridlex.devlint.fr",
+  "author": "https://github.com/devlint",
+  "version": "2.7.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:devlint/gridlex.git"
+  },
+  "license": "MIT",
+  "main": "dist/gridlex.min.css",
+  "sass": "src/gridlex.scss",
+  "style": "docs/gridlex.css",
+  "scripts": {
+    "version": "npm run dist && git add -A .",
+    "dist": "node-sass src/gridlex.scss --sourceMap dist/ -o dist/ && postcss dist/gridlex.css > dist/gridlex.min.css && npm run docs",
+    "docs": "cp -R dist/*.* docs"
+  },
+  "devDependencies": {
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.0"
+  }
+}
