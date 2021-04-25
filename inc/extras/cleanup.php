@@ -48,6 +48,9 @@ function birds_starter_theme_header_cleanup() {
 add_filter( 'style_loader_tag', 'birds_starter_theme_clean_style_tag' );
 function birds_starter_theme_clean_style_tag( $input ) {
 	preg_match_all( "!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches );
+	if ( empty( $matches[2] ) ) {
+		return $input;
+	}
 	// Only display media if it is meaningful
 	$media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
 	return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";

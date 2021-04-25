@@ -38,6 +38,13 @@
 	?>
 </head>
 <body <?php echo body_class(); ?>>
+	<?php
+	if ( function_exists( 'wp_body_open' ) ) {
+		wp_body_open();
+	} else {
+		do_action( 'wp_body_open' );
+	}
+	?>
 	<!--[if lt IE 10]>
 		<div class="browsehappy">
 			You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.

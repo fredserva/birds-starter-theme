@@ -163,35 +163,7 @@ if ( ! function_exists( 'birds_starter_theme_fonts_url' ) ) :
 	 * @since 1.0.0
 	 */
 	function birds_starter_theme_fonts_url() {
-		$fonts_url = '';
-		$fonts     = array();
-		$subsets   = 'latin,latin-ext';
-
-		/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-		$lato = _x( 'on', 'Lato font: on or off', 'birds' );
-		$merriweather = _x( 'on', 'Merriweather font: on or off', 'birds' );
-		$open_sans = _x( 'on', 'Open Sans font: on or off', 'birds' );
-
-		if ( 'off' !== $lato ) {
-			$font_families[] = 'Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic';
-		}
-		if ( 'off' !== $merriweather ) {
-			$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
-		}
-		if ( 'off' !== $open_sans ) {
-			$fonts[] = 'Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic';
-		}
-
-		if ( $fonts ) {
-			$fonts_url = add_query_arg(
-				array(
-					'family' => urlencode( implode( '|', $fonts ) ),
-					'subset' => urlencode( $subsets ),
-				),
-				'https://fonts.googleapis.com/css'
-			);
-		}
-		return $fonts_url;
+		return 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,400;1,700;1,900&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;700&family=Work+Sans:wght@700;800;900&display=swap';
 	}
 endif;
 
@@ -225,10 +197,13 @@ function birds_starter_theme_scripts() {
 	wp_enqueue_style( 'birds_starter_theme-normalize-css', get_template_directory_uri() . '/css/normalize.css', array(), null );
 
 	// Gridlex CSS - https://gridlex.devlint.fr/
-	wp_enqueue_style( 'birds_starter_theme-gridlex-css', get_template_directory_uri() . '/inc/vendor/gridlex/gridlex.css', array(), null );
+	wp_enqueue_style( 'birds_starter_theme-gridlex-css', get_template_directory_uri() . '/inc/vendor/gridlex/gridlex.min.css', array(), null );
 
 	// Google Fonts
 	wp_enqueue_style( 'birds_starter_theme-google-fonts', birds_starter_theme_fonts_url(), array(), null );
+
+	// GLightbox Stylesheet
+	wp_enqueue_style( 'birds_starter_theme-lightbox-css', get_template_directory_uri() . '/inc/vendor/glightbox/glightbox.min.css', array(), null );
 
 	// Main Stylesheet
 	wp_enqueue_style( 'birds_starter_theme-main-css', get_template_directory_uri() . '/css/main.css', array(), null );
@@ -248,6 +223,9 @@ function birds_starter_theme_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// GLightbox
+	wp_enqueue_script( 'birds_starter_theme-lightbox', get_template_directory_uri() . '/inc/vendor/glightbox/glightbox.min.js', array( 'jquery' ), null, true );
 
 	// Custom Script
 	wp_enqueue_script( 'birds_starter_theme-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), null, true );
